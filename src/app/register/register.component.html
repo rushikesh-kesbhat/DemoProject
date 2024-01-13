@@ -1,0 +1,112 @@
+<div class="main-div">
+    <mat-card class="matclass">
+        <mat-card-title style="text-align: center;">Register Form</mat-card-title>
+        <mat-card-content class="content_class">
+            <form [formGroup]="form" (ngSubmit)="saveDetails(form)" autocomplete="off">
+                <div class="main">
+                    <div class="design">
+                        <div>
+                            <mat-form-field appearance="legacy">
+                                <mat-label>FirstName :</mat-label>
+                                <input matInput type="text" formControlName="fname" placeholder="Your FirstName">
+                                <mat-hint>Input the FirstName</mat-hint>
+                                <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                                <mat-error *ngIf="form.controls['fname'].errors?.['required']">FirstName is
+                                    required</mat-error>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="design1">
+                            <div>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>LastName :</mat-label>
+                                    <input matInput type="text" formControlName="lname" placeholder="Your LastName">
+                                    <mat-hint>Input the LastName</mat-hint>
+                                    <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                                    <mat-error *ngIf="form.controls['lname'].errors?.['required']">LastName is
+                                        required</mat-error>
+
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>Email :</mat-label>
+                                    <input matInput type="text" formControlName="email" placeholder="Enter Email Id">
+                                    <mat-hint>Input the Email</mat-hint>
+                                    <mat-icon matSuffix>email</mat-icon>
+                                    <mat-error>Enter valid Email</mat-error>
+                                    <mat-error
+                                        *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].errors?.['pattern']">
+                                        Email is Required
+                                    </mat-error>
+                                    <!-- <mat-error *ngIf=" form.controls['email'].errors?.['pattern']">
+                            Email is Invalid
+                        </mat-error> -->
+                                </mat-form-field>
+
+                            </div>
+                            <div class="shape">
+                                <mat-form-field style="width: 50%;">
+                                    <!-- <mat-label><b>Designation</b></mat-label> -->
+                                    <mat-hint style="font-weight: bold; font-size:small;">Choose the
+                                        Designation</mat-hint>
+                                    <select class="select" matNativeControl required formControlName="designation">
+                                        <option value="Manager">Project Manager</option>
+                                        <option value="Backend-Developer">Program Manager</option>
+                                        <option value="Backend-Developer">Senior Software Engineer</option>
+                                        <option value="Full-Stack-Developer">Full-Stack-Developer</option>
+                                        <option value="Frontend-Developer">Frontend-Developer</option>
+                                        <option value="Backend-Developer">Backend-Developer</option>
+                                        <option value="Backend-Developer">Software Engineer</option>
+                                        <option value="Backend-Developer">system Analyst</option>
+                                        <option value="Backend-Developer">Project Lead</option>
+                                        <option value="Backend-Developer">Trainee Engineer</option>
+                                    </select>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field appearance="standard">
+                                    <mat-label>Password </mat-label>
+                                    <input matInput [type]="flag ? 'password' : 'text'"
+                                        placeholder="Enter your password" formControlName="password">
+                                    <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off'
+                                        }}</mat-icon>
+                                    <mat-hint>Input the Password</mat-hint>
+                                    <mat-error>password is required</mat-error>
+                                    <mat-error *ngIf="form.controls['password'].errors?.['minlength']">
+                                        Please enter more than 6 character
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Confirm Password </mat-label>
+                                <input matInput [type]="flag ? 'password' : 'text'" placeholder="Enter your password"
+                                    formControlName="cpassword">
+                                <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off'
+                                    }}</mat-icon>
+                                <mat-hint>Input the Password</mat-hint>
+                                <mat-error> Password & Confirm Password didn't match.</mat-error>
+
+                                <mat-error
+                                    *ngIf="form.controls['cpassword'].errors?.['ConfirmPasswordValidator'] && form.controls['cpassword'].errors?.['required']">
+                                    Password & Confirm Password didn't match.
+                                </mat-error>
+
+                            </mat-form-field>
+                        </div>
+
+                        <div>
+                            <button style="margin-top: 5%;" mat-raised-button color="primary" class="regstyle"
+                                type="submit">Register</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

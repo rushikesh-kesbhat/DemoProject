@@ -1,0 +1,54 @@
+<div class="main-div">
+    <mat-card class="matclass">
+        <mat-card-title style="text-align: center;">Login Form</mat-card-title>
+        <mat-card-content class="content_class">
+            <form [formGroup]="form" (ngSubmit)="saveDetails(form)" autocomplete="off">
+                <div>
+                    <mat-form-field appearance="legacy">
+                        <mat-label style="font-size: medium;">Email </mat-label>
+                        <input matInput type="text" formControlName="email" placeholder="Your Email">
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-hint>Input the Email</mat-hint>
+                        <mat-error *ngIf="form.controls['email'].errors?.['required']">Username is
+                            required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="standard">
+                        <mat-label style="font-size: medium;">Password </mat-label>
+                        <input matInput [type]="flag ? 'password' : 'text'" placeholder="Enter your password"
+                            formControlName="password">
+                        <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        <mat-hint>Input the Password</mat-hint>
+                        <mat-error>password is required</mat-error>
+                        <mat-error *ngIf="form.controls['password'].errors?.['minlength']">
+                            Please enter more than 6 character
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div style="margin-top: 4%; margin-left: 27%;">
+                    <a href=" " (click)="forgotpass()" [routerLink]="['/otpverify']">Forgot Password ? </a>
+                </div>
+                <div style="margin-top: 4%">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Login</button>
+                </div>
+                <div style="margin-top: 4%; ">
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account ? <a routerLink="/register"
+                            style="color: red;">Register</a></p>
+                </div>
+                <div style="margin-top: 4%; ">
+                    <p class="small fw-bold mt-2 pt-1 mb-0"> Active Email ? <a  (click)="verifyEmail()" routerLink="/otpverify"
+                            style="color: red;">Activate</a></p>
+                </div>
+                <div class="content">
+                    <p class="or">or</p>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary"><a [routerLink]="['/otpverify']"
+                            style="text-decoration: none; color: white;">Login with OTP</a> </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<router-outlet></router-outlet>

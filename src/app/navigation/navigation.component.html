@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <div class="projectnme">HyperBella</div>
+  <div style="margin-left: 70%;">
+    <span *ngIf="!show" class="getnmestyle"> Welcome <small>{{ getName }}</small></span>
+    <a mat-button class="label_show" (click)="logout()"> {{show?'Login':'Logout'}}</a>
+    <a mat-button *ngIf="show" class="label_show" (click)="register()">Register</a>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <div style="display: flex; margin-top: 8px;">
+    <div *ngIf="dash=='dashboard'" class="inner_div">
+      <ul>
+        <li><a id="focus" routerLink='/allfiles'>All Files</a></li>
+        <li><a routerLink='/sharewithme'>Shared With Me</a></li>
+        <li><a routerLink='/recentFiles'>Recent Files</a></li>
+        <li><a routerLink='/fileupload'>Upload</a></li>
+        <li><a routerLink='/uploadedfiles'>Uploded Files</a></li>
+      </ul>
+    </div>
+
+    <div class="main_content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,141 @@
+a:hover {
+  background-color: rgb(105, 105, 228);
+}
+
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  color: lightgray;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.label_show {
+  font-weight: light;
+  font-size: medium;
+
+}
+
+.getnmestyle {
+  color: white;
+  padding: 10px;
+
+}
+
+.projectnme {
+  font-size: large;
+}
+
+.projectnme {
+  color: honeydew;
+  font-size: larger;
+}
+
+.acc_crl {
+  font-size: larger;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color:black;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: medium;
+  font-weight:500;
+}
+
+li a.active,li a:focus {
+  background-color: #004a9f;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(196, 196, 218);
+  color: white;
+}
+.inner_div{
+  width: 10%;
+  
+}
+.main_content{
+  width:99%;
+  margin-left: 1%;
+ 
+}

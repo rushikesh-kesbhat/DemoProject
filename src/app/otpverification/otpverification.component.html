@@ -1,0 +1,39 @@
+<div class="main-div">
+  <mat-card class="matclass">
+    <mat-card-title style="text-align: center; margin-bottom: 8%;">OTP Verification</mat-card-title>
+    <mat-card-content class="content_class">
+      <div [ngClass]="'first'">
+        <form [formGroup]="myform" (ngSubmit)="onSubmit(myform)">
+          <div *ngIf="!verify">
+            <p>
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="to" matInput placeholder="Enter Email">
+                <mat-icon matSuffix> email</mat-icon>
+                <mat-error> Email is Invalid</mat-error>
+                <mat-error
+                  *ngIf="myform.controls['to'].errors?.['required'] || myform.controls['to'].errors?.['pattern'] "></mat-error>
+              </mat-form-field>
+            </p>
+            <button mat-raised-button color="primary" type="submit"><span style="margin-left:15%;"
+                *ngIf="loading==false"> Send OTP </span>
+              <mat-icon><mat-spinner *ngIf="loading==true" color="accent" diameter="25">
+                </mat-spinner></mat-icon>
+            </button>
+          </div>
+          <div class="container" *ngIf='verify'>
+            <div class="card">
+              <p style="font-weight:bold; font-size: medium;  color:rgb(94, 94, 216)">Enter OTP for Verification</p>
+              <p style="font-weight:normal; font-size: medium;  color:red">OTP has Sent to Regesiterd EmailId</p>
+              <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent"
+                [config]="config"></ng-otp-input>
+            </div>
+            <div class="container" style="margin-top: 4%;">
+              <button mat-raised-button color="primary" type="submit">Resend OTP</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

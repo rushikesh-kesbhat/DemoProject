@@ -1,0 +1,43 @@
+.main-div{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+  }
+  .matclass{
+    width: 50vh;
+    padding: 50px;
+    background-color:mistyrose;
+    border: 1px solid black;
+    box-shadow: 5px 10px 8px black;
+  }
+  .content_class{
+    text-align: center;
+  }
+  .content {
+    margin: 10px auto;
+    width: 200px;
+  }
+  @keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #000000;
+    animation: spinner .8s linear infinite;
+  }
+ 
+  
+ 

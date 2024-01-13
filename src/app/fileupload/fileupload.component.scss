@@ -1,0 +1,91 @@
+.main-div {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matclass {
+  width: 100vh;
+  padding: 70px;
+  background-color: mistyrose;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px black;
+  height: 250px;
+}
+
+.content_class {
+  text-align: center;
+}
+
+.example-margin {
+  margin: 0 12px;
+  font-size: medium;
+}
+
+#style {
+  margin-left: 40%;
+}
+
+.form-control {
+  background-color: white;
+  height: 40px;
+  font-size: larger;
+
+  margin-top: 15px;
+  border: 0px;
+  border-radius: 10px;
+  font-weight: bolder;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+::-webkit-file-upload-button {
+  background-color: #E32227;
+  border: 0px;
+  border-radius: 10px;
+  height: 40px;
+  font-weight: bolder;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.share {
+  margin-top: 25px;
+  font-size: large;
+  background-color: #5A4FCF;
+  color: white;
+  margin-top: 40px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+mat-label {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.substyle {
+  background-color: #4C5270;
+  border-radius: 15px;
+  height: 50px;
+  width: 100px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sharewithstyle {
+  background-color: #4C5270;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.outbox {
+  font-size: larger;
+}
+
+.emailicon {
+  font-size: large;
+}
